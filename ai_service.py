@@ -1,4 +1,4 @@
-def analyze_resume(text: str):
+def analyze_resume(text: str) -> dict:
     text = text.lower()
 
     skills = []
@@ -11,7 +11,7 @@ def analyze_resume(text: str):
     if "flutter" in text:
         skills.append("Flutter")
 
-    return {
+    result = {
         "summary": "Backend developer resume analyzed successfully",
         "skills_found": skills,
         "strengths": [
@@ -30,3 +30,5 @@ def analyze_resume(text: str):
         ],
         "score": min(60 + len(skills) * 10, 100)
     }
+
+    return result
